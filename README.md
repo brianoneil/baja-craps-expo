@@ -1,50 +1,47 @@
-# Welcome to your Expo app 👋
+# Baja Craps
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Welcome to the Baja Craps mobile game project! This is a React Native Expo application for a two-player dice game with a unique scoring system.
 
-## Get started
+This project is managed on [Linear](https://linear.app/brainivy/project/baja-craps-955133f3f6cb).
 
-1. Install dependencies
+## Game Rules
 
-   ```bash
-   npm install
-   ```
+The game is a two-player dice game based on simplified Craps rules. Players take turns rolling two dice, earning points based on the roll and an established number.
 
-2. Start the app
+- **Starting a Turn**: A player starts their turn with no "established number."
+- **Rolling a 7 or 11**: If the player rolls a 7 or 11 on their first roll, they score a point, and their turn continues.
+- **Crapping Out**: If the player rolls a 2, 3, or 12 on their first roll, their turn ends, and it passes to the next player. No points are scored.
+- **Establishing a Number**: If the player rolls any other number (4, 5, 6, 8, 9, 10), that number becomes the "established number."
+- **Scoring a Point**: Once a number is established, the player must roll that same number again to score a point. After scoring, the established number is cleared, and their turn continues for a new first roll.
+- **Losing a Turn**: If a player has an established number and rolls a 7, their turn ends, and play passes to the next player. No points are scored.
 
-   ```bash
-   npx expo start
-   ```
+## Scoring System
 
-In the output, you'll find options to open the app in a
+- Points are tracked centrally. If the leading player scores, a point is added to their lead.
+- If the non-leading player scores, a point is subtracted from the leading player's score.
+- The score cannot go below 0. If the score is 0, the next player to score takes the lead with 1 point.
+- The game is won when a player reaches a predetermined score.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Getting Started with Development
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+1.  **Install dependencies**
+    ```bash
+    npm install
+    ```
 
-## Get a fresh project
+2.  **Start the app**
+    ```bash
+    npx expo start
+    ```
 
-When you're ready, run:
+This will open the Expo developer tools, where you can run the app on an iOS simulator, Android emulator, or on your own device using the Expo Go app.
 
-```bash
-npm run reset-project
-```
+### Project Structure
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app). It uses file-based routing with [Expo Router](https://docs.expo.dev/router/introduction/). Key directories include:
 
-## Learn more
+-   `app/`: Contains all the screens and routes for the application.
+-   `components/`: Shared components used across the application.
+-   `constants/`: Global constants like colors and environment variables.
+-   `hooks/`: Custom hooks for shared logic.
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
